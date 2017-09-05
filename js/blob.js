@@ -7,7 +7,7 @@ function Blob(w, h, r) {
 Blob.prototype.update = function () {
   var mouse = createVector(mouseX, mouseY);
   mouse.sub(this.pos);
-  mouse.setMag(3);
+  mouse.setMag(5);
   this.pos.add(mouse);
 };
 
