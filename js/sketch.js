@@ -4,7 +4,7 @@ var blob;
 var blobs = [];
 
 function setup() {
-  canvas = createCanvas(window.innerWidth * .5, window.innerHeight);
+  canvas = createCanvas(window.innerWidth, window.innerHeight);
   blob = new Blob(width/2, height/2, 45); //create muncher
   // create small circles
   for (var i = 0; i <10; i ++) {
@@ -18,6 +18,7 @@ function draw() {
     blobs[i].show();
     if (blob.touches(blobs[i])) {
       blobs.splice(i,1);
+      blobs.push(new Blob(random(width), random(height), 15));
     }
   }
   blob.show();

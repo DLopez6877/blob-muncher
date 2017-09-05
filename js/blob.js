@@ -14,6 +14,7 @@ Blob.prototype.update = function () {
 Blob.prototype.touches = function(other) {
   var d = p5.Vector.dist(this.pos, other.pos);
   if (d < this.r + other.r) {
+    this.randomColor = other.randomColor;
     return true;
   } else {
     return false;
