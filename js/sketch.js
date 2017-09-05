@@ -14,9 +14,12 @@ function setup() {
 
 function draw() {
   background(51);
-  for (var i = 0; i < blobs.length; i++) {
+  for (var i = blobs.length -1; i >= 0; i--) {
     blobs[i].show();
+    if (blob.touches(blobs[i])) {
+      blobs.splice(i,1);
+    }
   }
   blob.show();
-  blob.update();
+  blob.update(); //change position based on mouse pos
 }
